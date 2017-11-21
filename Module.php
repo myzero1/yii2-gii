@@ -247,6 +247,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
                 ],
                 'redactor' => [
                     'class' => 'yii\redactor\RedactorModule',
+                    'uploadDir' => '@webroot',
+                    'uploadUrl' => '@web',
                 ],
             ]
         );
