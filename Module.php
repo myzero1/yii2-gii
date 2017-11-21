@@ -98,10 +98,10 @@ class Module extends \yii\base\Module implements BootstrapInterface
             'description' => 'This is a description.',
             'url' => '/myzero1/gii/default/view?id=myzero1_captcha',
         ],
-        'myzero1_redactor' => [
+        'myzero1_wysiwyg' => [
             'name' => 'Redactor WYSIWYG Generator',
             'description' => 'Extension Redactor WYSIWYG for Yii2 framework.',
-            'url' => '/myzero1/gii/default/view?id=myzero1_redactor',
+            'url' => '/myzero1/gii/default/view?id=myzero1_wysiwyg',
         ],
     ];
 
@@ -200,7 +200,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
             'myzero1_captcha' => [
                 'class' => \myzero1\gii\generators\captcha\Generator::class,
             ],
-            'myzero1_redactor' => [
+            'myzero1_wysiwyg' => [
                 'class' => \myzero1\gii\generators\wysiwyg\Generator::class,
             ],
 
@@ -244,6 +244,12 @@ class Module extends \yii\base\Module implements BootstrapInterface
                         'basePath' => '@webroot/myzero1_upload',
                         'baseUrl' => '@web/myzero1_upload',
                     ],
+                ],
+                'myzero1_wysiwyg' => [
+                    'class' => 'myzero1\redactor\RedactorModule',
+                    'uploadDir' => '@webroot/myzero1_wysiwyg',
+                    'uploadUrl' => '@web/myzero1_wysiwyg',
+                    'imageAllowExtensions'=>['jpg','png','gif'],
                 ],
             ]
         );

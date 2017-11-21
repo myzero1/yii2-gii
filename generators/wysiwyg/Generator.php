@@ -246,7 +246,7 @@ EOD;
     public function showExample()
     {
         $model = new \common\models\User();
-        $example = \yii\redactor\widgets\Redactor::widget([
+        $example = \myzero1\redactor\widgets\Redactor::widget([
             'model' => $model,
             'attribute' => 'username'
         ]);
