@@ -73,7 +73,7 @@ EOD;
     'modules' => [
         ......
         'redactor' => [
-            'class' => 'yii\redactor\RedactorModule',
+            'class' => 'yii\\redactor\RedactorModule',
             // 'uploadDir' => '@webroot/path/to/uploadfolder',
             // 'uploadUrl' => '@web/path/to/uploadfolder',
             // 'imageAllowExtensions'=>['jpg','png','gif']
@@ -90,14 +90,14 @@ $output = $output . '<p> Add upload widget like following: </p>';
         $code2 = <<<EOD
 <?php
     ......
-    <?= \yii\redactor\widgets\Redactor::widget([
+    <?= \yii\\redactor\widgets\Redactor::widget([
         'model' => $model,
         'attribute' => 'body'
     ]) ?>
 
     //With ActiveForm
 
-    <?= $form->field($model, 'body')->widget(\yii\redactor\widgets\Redactor::className(), [
+    <?= $form->field($model, 'body')->widget(\yii\\redactor\widgets\Redactor::className(), [
         'clientOptions' => [
             'imageManagerJson' => ['/redactor/upload/image-json'],
             'imageUpload' => ['/redactor/upload/image'],
@@ -232,7 +232,7 @@ EOD;
         switch ($id) {
             case 1:
                 $aComposerRequires['require'] = [
-                    'myzero1/yii2-redactor' => '~2.0.2',
+                    'yiidoc/yii2-redactor' => '*',
                 ];
                 break;
         }
@@ -246,7 +246,7 @@ EOD;
     public function showExample()
     {
         $model = new \common\models\User();
-        $example = \myzero1\redactor\widgets\Redactor::widget([
+        $example = \yii\redactor\widgets\Redactor::widget([
             'model' => $model,
             'attribute' => 'username'
         ]);

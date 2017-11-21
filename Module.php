@@ -126,6 +126,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
             ];
         }
 
+        $this->addExample($app); // add the examples to app
+
     }
 
     /**
@@ -136,8 +138,6 @@ class Module extends \yii\base\Module implements BootstrapInterface
         parent::init();
 
         $this->addDefaultGii($this);
-
-        $this->addExample($this);
     }
 
 
@@ -245,11 +245,8 @@ class Module extends \yii\base\Module implements BootstrapInterface
                         'baseUrl' => '@web/myzero1_upload',
                     ],
                 ],
-                'myzero1_wysiwyg' => [
-                    'class' => 'myzero1\redactor\RedactorModule',
-                    'uploadDir' => '@webroot/myzero1_wysiwyg',
-                    'uploadUrl' => '@web/myzero1_wysiwyg',
-                    'imageAllowExtensions'=>['jpg','png','gif'],
+                'redactor' => [
+                    'class' => 'yii\redactor\RedactorModule',
                 ],
             ]
         );
